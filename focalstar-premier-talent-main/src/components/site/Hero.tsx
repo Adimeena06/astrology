@@ -4,7 +4,7 @@ import portrait from "@/assets/mehak-portrait.jpeg";
 import { WHATSAPP_URL, TAGLINE } from "@/lib/constants";
 import { StarsBackground } from "./StarsBackground";
 
-const zodiacs = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"];
+const zodiacs = ["♈", "♉", "♊", "♋", "♌", "♍", "♎", "♏", "♐", "♑", "♒", "♓"]; 
 
 export function Hero() {
   return (
