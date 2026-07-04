@@ -61,14 +61,16 @@
 }
 
 :root {
-  --radius: 0.25rem;
-  /* Luxury palette */
+  --radius: 0.75rem;
+  /* Luxury palette — Acharya Mehak Vats */
   --gold: oklch(0.78 0.13 84);          /* #D4AF37 luxury gold */
   --gold-soft: oklch(0.86 0.10 86);     /* light gold highlight */
   --gold-deep: oklch(0.58 0.13 70);     /* antique gold for shadows */
-  --ink: oklch(0 0 0);                  /* pure matte black */
+  --purple: oklch(0.28 0.10 300);       /* #2D1B4E deep royal purple */
+  --purple-glow: oklch(0.42 0.17 300);
+  --ink: oklch(0.04 0 0);               /* #0B0B0B matte black */
 
-  --background: oklch(0 0 0);
+  --background: oklch(0.04 0 0);
   --foreground: oklch(0.98 0 0);
   --card: oklch(0.08 0 0);
   --card-foreground: oklch(0.98 0 0);
@@ -104,7 +106,8 @@
   /* Luxury gradients & shadows */
   --gradient-gold: linear-gradient(135deg, oklch(0.86 0.10 86) 0%, oklch(0.78 0.13 84) 50%, oklch(0.58 0.13 70) 100%);
   --gradient-radial-gold: radial-gradient(circle at 50% 50%, oklch(0.78 0.13 84 / 0.35) 0%, transparent 70%);
-  --gradient-hero: linear-gradient(180deg, oklch(0 0 0 / 0.2) 0%, oklch(0 0 0 / 0.6) 60%, oklch(0 0 0 / 0.95) 100%);
+  --gradient-royal: radial-gradient(circle at 30% 40%, oklch(0.42 0.17 300 / 0.35) 0%, transparent 60%), radial-gradient(circle at 80% 70%, oklch(0.78 0.13 84 / 0.18) 0%, transparent 55%);
+  --gradient-hero: linear-gradient(180deg, oklch(0.04 0 0 / 0.2) 0%, oklch(0.04 0 0 / 0.6) 60%, oklch(0.04 0 0 / 0.95) 100%);
   --shadow-gold: 0 10px 40px -10px oklch(0.78 0.13 84 / 0.4);
   --shadow-luxury: 0 30px 80px -20px oklch(0 0 0 / 0.9);
   --glass: oklch(1 0 0 / 0.04);
@@ -149,6 +152,12 @@
 }
 @utility bg-gold {
   background-color: var(--gold);
+}
+@utility text-purple {
+  color: var(--purple-glow);
+}
+@utility bg-purple {
+  background-color: var(--purple);
 }
 @utility text-gradient-gold {
   background: var(--gradient-gold);
@@ -198,8 +207,23 @@
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px oklch(0.78 0.13 84 / 0.3); }
+  50% { box-shadow: 0 0 40px oklch(0.78 0.13 84 / 0.55), 0 0 80px oklch(0.42 0.17 300 / 0.3); }
+}
 
 @utility animate-shimmer { animation: shimmer 3s linear infinite; }
 @utility animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
 @utility animate-scroll-indicator { animation: scroll-indicator 1.8s ease-in-out infinite; }
 @utility animate-marquee { animation: marquee 40s linear infinite; }
+@utility animate-twinkle { animation: twinkle 4s ease-in-out infinite; }
+@utility animate-orbit-slow { animation: orbit 60s linear infinite; }
+@utility animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }

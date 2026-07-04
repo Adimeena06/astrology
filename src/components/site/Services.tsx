@@ -1,57 +1,72 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
 import {
-  Crown, Sparkles, Camera, Star, Megaphone, Users,
-  Search, GraduationCap, Footprints, Gem,
+  Sparkles, ScrollText, Hand, Layers, Hash, Home,
+  Heart, Briefcase, TrendingUp, Coins, Gem, CalendarClock,
 } from "lucide-react";
 
 const services = [
-  { icon: Crown, title: "Model Management", desc: "End-to-end career representation for runway and editorial talent." },
-  { icon: Sparkles, title: "Fashion Shows", desc: "Production of luxury runway events for the world's top houses." },
-  { icon: Camera, title: "Portfolio Shoots", desc: "Editorial-grade portfolio creation with award-winning photographers." },
-  { icon: Star, title: "Celebrity Management", desc: "Bespoke representation for film, music and public personalities." },
-  { icon: Megaphone, title: "Brand Promotions", desc: "Strategic brand alignment with India's most coveted faces." },
-  { icon: Users, title: "Influencer Marketing", desc: "Performance-driven campaigns with verified creator partners." },
-  { icon: Search, title: "Casting", desc: "Curated casting for film, fashion and global advertising." },
-  { icon: GraduationCap, title: "Grooming", desc: "Holistic grooming for camera, runway and brand-readiness." },
-  { icon: Footprints, title: "Runway Training", desc: "International-standard runway technique by master coaches." },
-  { icon: Gem, title: "Personal Branding", desc: "A complete identity system — photography, voice and presence." },
+  { icon: Sparkles, title: "Vedic Astrology", desc: "Deep insight into your janam kundli and planetary influences." },
+  { icon: ScrollText, title: "Kundli Analysis", desc: "Comprehensive birth chart study for life-defining decisions." },
+  { icon: Hand, title: "Palmistry", desc: "Reading the lines of destiny etched in your palms." },
+  { icon: Layers, title: "Tarot Reading", desc: "Focused card readings to illuminate present and near future." },
+  { icon: Hash, title: "Numerology", desc: "Aligning name, date and vibration with your soul purpose." },
+  { icon: Home, title: "Vastu Consultation", desc: "Harmonize energies of your home, office and sacred spaces." },
+  { icon: Heart, title: "Love & Marriage", desc: "Compatibility, timing and remedies for lasting union." },
+  { icon: Briefcase, title: "Career Guidance", desc: "Discover your true calling and best professional path." },
+  { icon: TrendingUp, title: "Business Astrology", desc: "Muhurat, partners and growth timing for your venture." },
+  { icon: Coins, title: "Wealth Consultation", desc: "Attract abundance through aligned action and rituals." },
+  { icon: Gem, title: "Gemstone Guidance", desc: "Personalized gemstones prescribed by planetary strength." },
+  { icon: CalendarClock, title: "Muhurat Selection", desc: "Auspicious timings for milestones and ceremonies." },
 ];
 
 export function Services() {
   return (
-    <section id="services" className="relative border-y border-border bg-[oklch(0.025_0_0)] py-28 md:py-40">
+    <section id="services" className="relative border-t border-border py-28 md:py-40">
       <div
         aria-hidden
-        className="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] opacity-30"
-        style={{ background: "var(--gradient-radial-gold)", filter: "blur(60px)" }}
+        className="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] opacity-25"
+        style={{ background: "var(--gradient-radial-gold)", filter: "blur(80px)" }}
       />
       <div className="relative mx-auto max-w-[1400px] px-6 md:px-10">
         <SectionHeading
-          eyebrow="What We Do"
-          title="The Atelier of"
-          italic="Talent"
-          description="A full-service modeling and talent house — from discovery and training to representation and global brand placement."
+          eyebrow="Consultation Services"
+          title="Timeless practices,"
+          italic="personally guided."
+          description="A complete spectrum of Vedic and spiritual practices — each session curated to your questions, chart and unique life moment."
         />
 
-        <div className="mt-20 grid grid-cols-1 gap-px overflow-hidden border border-border bg-border/40 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-20 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <motion.div
               key={s.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.8, delay: (i % 5) * 0.08 }}
-              className="group relative bg-[oklch(0.04_0_0)] p-8 transition-colors duration-700 hover:bg-[oklch(0.07_0.01_80)]"
+              transition={{ duration: 0.7, delay: (i % 3) * 0.08 }}
+              whileHover={{ y: -6 }}
+              className="group relative overflow-hidden rounded-2xl border border-gold/15 bg-[oklch(0.06_0_0)] p-8 transition-colors duration-500 hover:border-gold/50"
               data-cursor
             >
-              <s.icon size={26} strokeWidth={1} className="text-gold transition-transform duration-700 group-hover:-translate-y-1 group-hover:scale-110" />
-              <h3 className="mt-6 font-display text-lg font-light text-foreground">{s.title}</h3>
-              <p className="mt-3 text-xs font-light leading-relaxed text-foreground/55">{s.desc}</p>
-              <div className="mt-6 h-px w-8 bg-gold/50 transition-all duration-500 group-hover:w-full" />
-              <span className="absolute right-4 top-4 font-display text-[10px] tracking-[0.3em] text-foreground/20">
-                {String(i + 1).padStart(2, "0")}
-              </span>
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+                style={{ background: "var(--gradient-radial-gold)" }}
+              />
+              <div className="relative">
+                <div className="grid h-12 w-12 place-items-center rounded-full border border-gold/40 bg-black/40 transition-all duration-500 group-hover:border-gold group-hover:bg-gold/10">
+                  <s.icon size={20} strokeWidth={1.3} className="text-gold" />
+                </div>
+                <h3 className="mt-6 font-display text-xl font-light text-foreground">{s.title}</h3>
+                <p className="mt-3 text-sm font-light leading-relaxed text-foreground/60">{s.desc}</p>
+                <div className="mt-6 flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-gold/80">
+                  <span className="h-px w-6 bg-gold/60 transition-all duration-500 group-hover:w-12" />
+                  Learn More
+                </div>
+                <span className="absolute right-0 top-0 font-display text-[10px] tracking-[0.3em] text-foreground/20">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
             </motion.div>
           ))}
         </div>
