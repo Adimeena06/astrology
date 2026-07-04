@@ -1,0 +1,229 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * FOCUL STAR — luxury black & gold design system.
+ * Matte black backgrounds, luxury gold accents, white typography.
+ * Headings: Cinzel / Cormorant Garamond. Body: Poppins.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-gold-deep: var(--gold-deep);
+  --color-ink: var(--ink);
+  --font-display: "Cinzel", serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Poppins", sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+  /* Luxury palette — Acharya Mehak Vats */
+  --gold: oklch(0.78 0.13 84);          /* #D4AF37 luxury gold */
+  --gold-soft: oklch(0.86 0.10 86);     /* light gold highlight */
+  --gold-deep: oklch(0.58 0.13 70);     /* antique gold for shadows */
+  --purple: oklch(0.28 0.10 300);       /* #2D1B4E deep royal purple */
+  --purple-glow: oklch(0.42 0.17 300);
+  --ink: oklch(0.04 0 0);               /* #0B0B0B matte black */
+
+  --background: oklch(0.04 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.08 0 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.06 0 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: var(--gold);
+  --primary-foreground: oklch(0 0 0);
+  --secondary: oklch(0.12 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.14 0 0);
+  --muted-foreground: oklch(0.70 0.02 80);
+  --accent: var(--gold);
+  --accent-foreground: oklch(0 0 0);
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.22 0.02 80 / 50%);
+  --input: oklch(0.18 0.01 80);
+  --ring: var(--gold);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.06 0 0);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: var(--gold);
+  --sidebar-primary-foreground: oklch(0 0 0);
+  --sidebar-accent: oklch(0.14 0 0);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.22 0.02 80 / 40%);
+  --sidebar-ring: var(--gold);
+
+  /* Luxury gradients & shadows */
+  --gradient-gold: linear-gradient(135deg, oklch(0.86 0.10 86) 0%, oklch(0.78 0.13 84) 50%, oklch(0.58 0.13 70) 100%);
+  --gradient-radial-gold: radial-gradient(circle at 50% 50%, oklch(0.78 0.13 84 / 0.35) 0%, transparent 70%);
+  --gradient-royal: radial-gradient(circle at 30% 40%, oklch(0.42 0.17 300 / 0.35) 0%, transparent 60%), radial-gradient(circle at 80% 70%, oklch(0.78 0.13 84 / 0.18) 0%, transparent 55%);
+  --gradient-hero: linear-gradient(180deg, oklch(0.04 0 0 / 0.2) 0%, oklch(0.04 0 0 / 0.6) 60%, oklch(0.04 0 0 / 0.95) 100%);
+  --shadow-gold: 0 10px 40px -10px oklch(0.78 0.13 84 / 0.4);
+  --shadow-luxury: 0 30px 80px -20px oklch(0 0 0 / 0.9);
+  --glass: oklch(1 0 0 / 0.04);
+  --glass-border: oklch(0.78 0.13 84 / 0.18);
+}
+
+.dark {
+  /* Site is dark by default; .dark mirrors :root */
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "ss02";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: 0.02em; }
+
+  ::selection { background: var(--gold); color: #000; }
+
+  /* Gold scrollbar */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: #000; }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--gold-soft), var(--gold-deep));
+    border-radius: 4px;
+  }
+}
+
+@utility text-gold {
+  color: var(--gold);
+}
+@utility bg-gold {
+  background-color: var(--gold);
+}
+@utility text-purple {
+  color: var(--purple-glow);
+}
+@utility bg-purple {
+  background-color: var(--purple);
+}
+@utility text-gradient-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility border-gold {
+  border-color: var(--gold);
+}
+@utility glass-panel {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px) saturate(140%);
+}
+@utility shadow-gold {
+  box-shadow: var(--shadow-gold);
+}
+@utility font-display {
+  font-family: var(--font-display);
+}
+@utility font-serif-lux {
+  font-family: var(--font-serif);
+}
+@utility gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+}
+@utility glow-gold {
+  box-shadow: 0 0 40px oklch(0.78 0.13 84 / 0.45), 0 0 80px oklch(0.78 0.13 84 / 0.2);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes scroll-indicator {
+  0% { transform: translateY(-6px); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: translateY(10px); opacity: 0; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px oklch(0.78 0.13 84 / 0.3); }
+  50% { box-shadow: 0 0 40px oklch(0.78 0.13 84 / 0.55), 0 0 80px oklch(0.42 0.17 300 / 0.3); }
+}
+
+@utility animate-shimmer { animation: shimmer 3s linear infinite; }
+@utility animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+@utility animate-scroll-indicator { animation: scroll-indicator 1.8s ease-in-out infinite; }
+@utility animate-marquee { animation: marquee 40s linear infinite; }
+@utility animate-twinkle { animation: twinkle 4s ease-in-out infinite; }
+@utility animate-orbit-slow { animation: orbit 60s linear infinite; }
+@utility animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
