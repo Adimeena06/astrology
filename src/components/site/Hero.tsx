@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
-import portrait from "@/assets/mehak-portrait.jpg";
+import portrait from "@/assets/mehak-portrait.jpeg";
 import { WHATSAPP_URL, TAGLINE } from "@/lib/constants";
 import { StarsBackground } from "./StarsBackground";
 
